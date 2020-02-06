@@ -1,13 +1,8 @@
----
-title: 编译全功能vim8
-date: 2019-02-03 10:52:15
-tags: vim
-categories: 技术教程
----
+# 编译全功能vim8
 
 这篇博客讲解如何在ubuntu下编译vim8源码。参考：[YCM](https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source)
 
-# 1.卸载原有的vim
+## 1.卸载原有的vim
 
 ```bash
 sudo apt-get purge vim vim-runtime vim-gnome vim-common vim-tiny vim-gui-common
@@ -15,7 +10,7 @@ sudo apt-get purge vim vim-runtime vim-gnome vim-common vim-tiny vim-gui-common
 
 然后用`dpkg -l | grep vim`查看还有什么和vim相关的包，如果有，用`dpkg --purge`删除。
 
-# 2.安装编译vim需要的依赖包
+## 2.安装编译vim需要的依赖包
 
 ```bash
 sudo apt install libncurses5-dev libgnome2-dev libgnomeui-dev \
@@ -24,14 +19,14 @@ libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
 python3-dev ruby-dev lua5.1 liblua5.1-dev libperl-dev
 ```
 
-# 3.下载源码
+## 3.下载源码
 
 ```bash
 git clone https://github.com/vim/vim.git
 cd vim
 ```
 
-# 4.配置
+## 4.配置
 
 ```bash
 ./configure --with-features=huge \
@@ -49,7 +44,7 @@ cd vim
 
 参数说明
 
-```
+```bash
 –with-features=hug 支持最大特性 
 –enable-multibyte 多字节支持可以在Vim中输入中文 
 –enable-rubyinterp 启用Vim对ruby编写的插件的支持 
@@ -64,25 +59,25 @@ cd vim
 
 需要注意的是，ubuntu下编译的vim8不能同时支持python2和python3，具体可参见这个[问题](https://stackoverflow.com/questions/23023783/vim-compiled-with-python-support-but-cant-see-sys-version)。这里的编译选项是支持python3的。
 
-# 5.编译并安装
+## 5.编译并安装
 
 ```bash
 make && sudo make install
 ```
 
-# 6.打包vim的deb包
+## 6.打包vim的deb包
 
 可以使用checkinstall工具对编译的vim进行打包生成deb安装包，方便以后直接安装。
 
-## 6.1安装checkinstall
+### 6.1安装checkinstall
 
-```
+```bash
 sudo apt-get install checkinstall
 ```
 
 ## 6.2生成deb包
 
-```
+```bash
 cd vim
 sudo checkinstall
 ```

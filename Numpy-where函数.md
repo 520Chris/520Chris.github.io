@@ -1,11 +1,4 @@
----
-title: Numpy学习笔记-where函数
-date: 2019-02-14 22:19:38
-tags:
- - python
- - numpy
-categories: python
----
+# Numpy-where函数
 
 用法：`numpy.where(condition)`，输出满足条件的元素的坐标。这里的坐标以`tuple`的形式给出。原数组有多少维，输出的`tuple`中就包含几个数组，分别对应符合条件元素的各维坐标。
 

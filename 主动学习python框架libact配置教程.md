@@ -1,11 +1,6 @@
----
-title: 主动学习python框架libact配置教程
-date: 2019-01-25 15:04:18
-tags: libact
-categories: 技术教程
----
+# 主动学习python框架libact配置教程
 
-# 配置教程
+## 配置教程
 
 [libact](https://github.com/ntucllab/libact)是一个Python包，旨在让用户更容易地进行主动学习。该包不仅实现了几种流行的主动学习策略，而且还提供了一种“active learning by learning”算法，该算法可以帮助用户动态地自动选择最佳主动学习策略。此外，该包还提供了一个统一的接口，用于实现更多的主动学习策略。
 
@@ -38,11 +33,11 @@ categories: 技术教程
 
 大功告成！
 
-# 错误处理
+## 错误处理
 
 我在进行到第五步的`python3 setup.py build`的时候，出现了如下错误：
 
-```
+```bash
 ppnman@ubuntu:~/Desktop/libact$ python3 setup.py build
 Platform Detection: Linux. Link to liblapacke...
 running build
@@ -116,13 +111,13 @@ error: Command "x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-fun
 
 根据报错信息可以知道，由于这个错误`/usr/bin/ld: cannot find -llapacke -llapack -lblas`，导致
 
-```
+```bash
 x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -Wl,-Bsymbolic-functions -Wl,-z,relro -g -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 build/temp.linux-x86_64-3.5/libact/query_strategies/src/variance_reduction/variance_reduction.o -o build/lib.linux-x86_64-3.5/libact/query_strategies/_variance_reduction.cpython-35m-x86_64-linux-gnu.so -llapacke -llapack -lblas
 ```
 
 这个命令运行失败。去网上搜索了很久，说是缺少对应的动态链接库。把他们的方法挨个试了一遍，还是不行。最后灵机一动，把
 
-```
+```bash
 x86_64-linux-gnu-gcc ...... -llapacke -llapack -lblas
 ```
 

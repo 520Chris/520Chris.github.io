@@ -1,12 +1,3 @@
----
-title: Numpy学习笔记-数组
-date: 2019-02-14 22:26:24
-tags:
- - python
- - numpy
-categorize: python
----
-
 # NumPy数组
 
 NumPy数组是一个多维数组对象，称为ndarray。它由两部分组成：

@@ -1,13 +1,8 @@
----
-title: tmux常用操作
-date: 2019-01-26 20:12:17
-tags: tmux
-categories: 技术教程
----
+# tmux常用操作
 
 tmux所有快捷键都有一个前缀**ctrl+b**，这里简称prefix。
 
-# 会话
+## 会话
 
 **tmux new**，创建默认名称的会话
 
@@ -15,11 +10,11 @@ tmux所有快捷键都有一个前缀**ctrl+b**，这里简称prefix。
 
 **prefix s**，列出会话，可进行切换
 
-# 窗口
+## 窗口
 
 **prefix c**，创建一个新窗口
 
-# 窗格
+## 窗格
 
 **prefix %**，水平方向创建窗格
 

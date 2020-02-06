@@ -1,15 +1,8 @@
----
-title: vim和git的完美结合：使用vimdiff查看代码差异
-date: 2019-01-30 00:04:08
-tags:
- - git
- - vim
-categories: 技术教程
----
+# vim和git的完美结合：使用vimdiff查看代码差异
 
 先配置git
 
-```
+```bash
 git config --global diff.tool vimdiff
 git config --global difftool.prompt false
 git config --global alias.d difftool # 给difftool起个别名d

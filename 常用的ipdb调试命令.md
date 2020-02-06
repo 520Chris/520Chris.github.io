@@ -1,9 +1,4 @@
----
-title: 常用的ipdb调试命令
-date: 2019-02-09 23:27:17
-tags: ipdb
-categories: 技术教程
----
+# 常用的ipdb调试命令
 
 常用的`ipdb`命令整理如下。
 
