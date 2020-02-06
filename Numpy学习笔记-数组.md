@@ -21,7 +21,7 @@ NumPy数组是一个多维数组对象，称为ndarray。它由两部分组成�
 - 数组的下标是从0开始的
 - 同一个NumPy数组中所有元素的类型都必须是相同的。
 
-# NumPy数组属性
+## NumPy数组属性
 
 在详细介绍NumPy数组之前，先详细介绍下NumPy数组的基本属性。NumPy数组的维数称为秩（rank），一维数组的秩为1，二维数组的秩为2，以此类推。在NumPy中，每一个线性的数组称为是一个轴（axis），秩其实是描述轴的数量。比如说，二维数组相当于是两个一维数组，其中第一个一维数组中每个元素又是一个一维数组。所以一维数组就是NumPy中的轴（axis）。第一个轴相当于是底层数组，第二个轴是底层数组里的数组。而轴的数量——秩，就是数组的维数。
 
@@ -38,31 +38,31 @@ NumPy的数组中比较重要ndarray对象属性有：
 
 先介绍一下创建数组。创建数组的方法有很多种。比如可以使用array函数从常规的Python列表和元组创造数组，数组元素的类型由原序列中的元素推导而来
 
-```
-import numpy as np #引入模块
+```python
+import numpy as np  # 引入模块
 a=np.array([2,3,4])
 print(a)
-print(a.dtype)#查看数组的类型
+print(a.dtype)  # 查看数组的类型
 b=np.array([1.2,3.5,5.1])
 print(b.dtype)
 ```
 
 注意**使用array函数创建时，参数必须是由方括号括起来的列表，不能使用多个数值作为参数调用array**。
 
-```
-a=np.array(1,2,3,4)#错误
-a=np.array([1,2,3,4])#正确
+```python
+a=np.array(1,2,3,4)  # 错误
+a=np.array([1,2,3,4])  # 正确
 ```
 
 可以使用双重序列来表示二维的数组，三重序列来表示三维数组，以此类推。
 
-```
+```python
 b=np.array([[1.5,2,3],[4,5,6]])
 print(b)
 print(b.ndim)
 
-#两种方法都可以创建二维数组
- 
+# 两种方法都可以创建二维数组
+
 b=np.array([(1.5,2,3),(4,5,6)])
 print(b)
 print(b.ndim)
@@ -70,7 +70,7 @@ print(b.ndim)
 
 可以在创建时显式指定数组中元素的类型
 
-```
+```python
 a=np.array([[1,2],[3,4]],dtype=complex)
 print(a)
 ```
@@ -79,14 +79,14 @@ print(a)
 
 用函数zeros可创建一个全是0的数组，用函数ones可创建一个全为1的数组，函数empty创建一个内容随机并且依赖于内存状态的数组。**默认创建的数组类型(dtype)都是float64**。
 
-```
+```python
 a=np.zeros((3,4))
 print(a)
 ```
 
 也可以指定类型
 
-```
+```python
 a=np.zeros((3,4),dtype=int)
 print(a)
 ```
